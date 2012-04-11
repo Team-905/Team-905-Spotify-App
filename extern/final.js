@@ -182,8 +182,8 @@ function createTimeline()
     var ctx = timeline.getContext("2d");
     
     ctx.beginPath();
-    ctx.moveTo(0,40);
-    ctx.lineTo(800,40);
+    ctx.moveTo(0,50);
+    ctx.lineTo(800,50);
     ctx.lineWidth = 5;
     ctx.strokeStyle = "#FF3300";
     ctx.stroke();
