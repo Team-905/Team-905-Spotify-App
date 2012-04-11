@@ -302,6 +302,7 @@ function AddToTimeline()
             $("#timeline").hide();
             $("#timelineEntrys").hide();
             $("form").show();
+			CurrentDate();
         });
 }
 
@@ -375,4 +376,20 @@ function PlayerRefresh(){
 			ShowTrackData();
 			console.log('Started: PlayerRefresh');
     });
+}
+
+function CurrentDate(){
+	
+	console.log('Started: CurrentDate');
+	
+	var currentTime = new Date()
+	var month = currentTime.getMonth() + 1
+	var day = currentTime.getDate()
+	var year = currentTime.getFullYear()
+	console.log(month + "/" + day + "/" + year)
+	var CurrentDate = month + "-" + day + "-" + year
+	
+	var DateCon = document.getElementById('TF_Date');
+	DateCon.value = CurrentDate;
+	
 }
