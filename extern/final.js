@@ -10,7 +10,7 @@ $(document).ready(Constructor);
 
 function Constructor(){
 
-        console.log('Started: loading app.');
+        console.log('Con_Started: loading app.');
 	ShowTrackData();
         getPlaylistXML(Get_User_ID());
         createTimeline();
@@ -98,9 +98,10 @@ function Get_User_ID(){
 
 function Constructor_Playlist(){
 	
-	console.log('Started: playlist constructor.');
+	console.log('Con_Started: playlist constructor.');
 	RemoveTracks();
 	AddTracks();
+	
 	console.log('Finished: playlist constructor.');
 }
 
@@ -351,4 +352,12 @@ function Cancel()
             $("#timelineEntrys").show();
             $("form").hide();
         });
+}
+
+function PlayerRefresh(){
+	player.observe(models.EVENT.CHANGE, function (e){
+			// Only update the page if the track changed
+			ShowTrackData();
+			console.log('Started: PlayerRefresh');
+    });
 }
