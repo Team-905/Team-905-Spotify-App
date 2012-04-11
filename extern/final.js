@@ -386,7 +386,6 @@ function CurrentDate(){
 	var month = currentTime.getMonth() + 1
 	var day = currentTime.getDate()
 	var year = currentTime.getFullYear()
-	console.log(month + "/" + day + "/" + year)
 	var CurrentDate = month + "-" + day + "-" + year
 	
 	var DateCon = document.getElementById('TF_Date');
