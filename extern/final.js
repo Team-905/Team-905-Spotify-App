@@ -208,7 +208,7 @@ function createEntries()
             ctx.beginPath();
             ctx.moveTo(spacing,0);
             ctx.lineTo(spacing,50);
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 2;
             ctx.strokeStyle = "#FF3300";
             ctx.stroke();
 
