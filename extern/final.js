@@ -10,8 +10,8 @@ $(document).ready(Constructor);
 
 function Constructor(){
 
-        console.log('Started: loading app.');
-	ShowTrackData();
+        console.log('Con_Started: loading app.');
+		ShowTrackData();
         getPlaylistXML(Get_User_ID());
         createTimeline();
         AddToTimeline();
@@ -19,6 +19,7 @@ function Constructor(){
         SubButton();
         Cancel();
         DivEvent();
+		PlayerRefresh();
 
         console.log('Finished: loading app.');
 }
@@ -98,9 +99,10 @@ function Get_User_ID(){
 
 function Constructor_Playlist(){
 	
-	console.log('Started: playlist constructor.');
+	console.log('Con_Started: playlist constructor.');
 	RemoveTracks();
 	AddTracks();
+	
 	console.log('Finished: playlist constructor.');
 }
 
@@ -283,11 +285,11 @@ function HelpMe(){
 
 function PlayPlaylist(){
 
-console.log("Started: PlayPlaylist");
+	console.log("Started: PlayPlaylist");
 
-var uri = 'http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm';
+	var uri = 'http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm';
 
-models.player.play(uri);
+	models.player.play(uri);
 
 }
 
@@ -341,7 +343,18 @@ function PlayTimeline()
         {
              console.log('Started: PlayTimeline');
              Constructor_Playlist();
+			PlayPlaylist();
         });
+}
+
+function PlayPlaylist(){
+	
+	console.log("Started: PlayPlaylist");
+	
+	var uri = 'http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm';
+	
+	models.player.play(uri);
+	
 }
 
 function Cancel()
@@ -354,4 +367,12 @@ function Cancel()
             $("#timelineEntrys").show();
             $("form").hide();
         });
+}
+
+function PlayerRefresh(){
+	player.observe(models.EVENT.CHANGE, function (e){
+			// Only update the page if the track changed
+			ShowTrackData();
+			console.log('Started: PlayerRefresh');
+    });
 }
