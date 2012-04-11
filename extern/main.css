@@ -15,6 +15,7 @@
         width: 150px;
         text-align: center;
         margin: 5px;
+        cursor: pointer;
 }
 
 .mainButton{
@@ -41,6 +42,7 @@
         border: 1px solid;
         border-radius: 5px;
         text-align: center;
+        cursor: pointer;
 }
 
 .hide{
