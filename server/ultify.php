@@ -5,21 +5,21 @@ header("Content-Type: text/xml");
 //Accepted input values (POST) are uniqueuserid(u), track(tr), comment(c), time(t)
 //Mandatory: uniqueuserid, else script will not output anything.
 
+//include database configuration
+include("config.php");
+$db = mysqli_connect($db_host, $db_user, $db_password, $db_database);
+
 function InputSecurity($String){// Verwacht String input en sla deze op als $String.
 
-$Verbinding = ConDB(); // ConDB() oproepen, waarna er een array met informatie terug gestuurd word om verbinding te maken.
+//$Verbinding = ConDB(); // ConDB() oproepen, waarna er een array met informatie terug gestuurd word om verbinding te maken.
 $String = strtolower($String); // Elke letter in $String word lowercase. Persoonlijke keuze, zo zijn wachtwoorden etc niet hoofd letter gevoelig.
 $String = strip_tags($String); // Alle html en php tags worden verwijderd.
-$String = mysqli_real_escape_String($Verbinding, $String); // De $String word ge-escaped zodat de sql niet de invoer niet ziet als sql, maar als platte tekst.
+$String = mysqli_real_escape_String($db, $String); // De $String word ge-escaped zodat de sql niet de invoer niet ziet als sql, maar als platte tekst.
 $String = htmlspecialchars($String); // Alle lees tekens worden omgezet naar een textuele form.
 
 return $String;
 
 }
-
-//include database configuration
-include("config.php");
-$db = mysqli_connect($db_host, $db_user, $db_password, $db_database);
 
 if (isset($_GET['u']))
 {
