@@ -48,11 +48,11 @@ function ShowTrackData(){
 	var playerTrackInfo = player.track;
 
     if (playerTrackInfo == null) {
-        $('h2').replaceWith("<span class='error'>Er speeld niets!</span>");
+        $('h2').replaceWith("Er speelt momenteel geen nummer.");
     } else {
-		var track = playerTrackInfo.data;
-		$('h2').replaceWith("<h2> Track: "+ track.name + "<BR /> Album: " + track.album.name + " <BR />Artiest: " + track.album.artist.name + ". <BR /> URI/Locatie: " + track.uri + "</h2>");
-	}
+	var track = playerTrackInfo.data;
+	$('h2').replaceWith("<h2> Track: "+ track.name + "<BR /> Album: " + track.album.name + " <BR />Artiest: " + track.album.artist.name + ". <BR /> URI/Locatie: " + track.uri + "</h2>");
+    }
 }
 
 function Squares(){
