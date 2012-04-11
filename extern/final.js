@@ -319,11 +319,12 @@ function SubButton()
         var t_uri = t_uri_array[2];
         var textcomment = $("textarea").val();
         var userid = Get_User_ID();
+        var s_time = $("#TF_Date").val();
         var base_url = "http://student.cmi.hro.nl/0851729/prj3/ultify/ultify.php?u=";
         var get_url = base_url+userid;
         $.post(
         get_url,
-        {track:t_uri,comment:textcomment,submit:"submit"},
+        {track:t_uri,comment:textcomment,submit:"submit",time:s_time},
         // TODO: When we have a function to refresh timeline,
         // change this function
         function(data)
@@ -386,6 +387,10 @@ function CurrentDate(){
 	var month = currentTime.getMonth() + 1
 	var day = currentTime.getDate()
 	var year = currentTime.getFullYear()
+<<<<<<< HEAD
+=======
+	console.log(month + "/" + day + "/" + year)
+>>>>>>> 80ec03360e3069f3e9decccad59e7fdad4e7f230
 	var CurrentDate = month + "-" + day + "-" + year
 	
 	var DateCon = document.getElementById('TF_Date');
