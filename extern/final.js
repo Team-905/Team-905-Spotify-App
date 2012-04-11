@@ -11,7 +11,7 @@ $(document).ready(Constructor);
 function Constructor(){
 
         console.log('Con_Started: loading app.');
-	ShowTrackData();
+		ShowTrackData();
         getPlaylistXML(Get_User_ID());
         createTimeline();
         AddToTimeline();
@@ -19,6 +19,7 @@ function Constructor(){
         SubButton();
         Cancel();
         DivEvent();
+		PlayerRefresh();
 
         console.log('Finished: loading app.');
 }
@@ -281,11 +282,11 @@ function HelpMe(){
 
 function PlayPlaylist(){
 
-console.log("Started: PlayPlaylist");
+	console.log("Started: PlayPlaylist");
 
-var uri = 'http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm';
+	var uri = 'http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm';
 
-models.player.play(uri);
+	models.player.play(uri);
 
 }
 
