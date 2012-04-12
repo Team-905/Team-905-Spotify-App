@@ -20,6 +20,8 @@ function Constructor(){
         Cancel();
         DivEvent();
 		PlayerRefresh();
+        DatePicker();
+
 
         console.log('Finished: loading app.');
 }
@@ -392,4 +394,11 @@ function CurrentDate(){
 	var DateCon = document.getElementById('TF_Date');
 	DateCon.value = CurrentDate;
 	
+}
+
+function DatePicker(){
+    $( "#datepicker" ).datepicker({
+        altField: "#TF_Date",
+        altFormat: "yy-mm-dd"
+    });
 }
