@@ -19,7 +19,9 @@ function Constructor(){
         SubButton();
         Cancel();
         DivEvent();
-		PlayerRefresh();
+        PlayerRefresh();
+        TimelineCal();
+        TimelineNext();
 
         console.log('Finished: loading app.');
 }
@@ -196,10 +198,12 @@ function createEntries()
     var entryMax = 5;
     var timeline = document.getElementById("timeline");
     var ctx = timeline.getContext("2d");
-    var i = 0;
+    var i = TimelineCal(0);
+    var j = TimelineCal(1);
+    
 
     console.log("Started: createEntries");
-    while (i < 5)
+    while (i < j)
     {
             
             var spacing = (800 / entryMax) * i;
@@ -227,6 +231,48 @@ function createEntries()
             i++;
     }
 
+}
+
+function TimelineCal(Par)
+{
+        console.log("Started: TimelineCal");
+        
+        var pageID = 1;
+        
+        if(Par == 0)
+        {
+            var i = pageID + 1;
+            
+            console.log(i);
+            
+            return i;
+        }
+        
+        else if(Par == 1)
+        {
+            var j = pageID * 5;
+            
+            console.log(j);
+            
+            return j;
+        }
+        
+        else if(Par == 2)
+        {
+            pageID++;
+            
+            console.log(pageID);
+            
+            createEntries();
+        }
+}
+
+function TimelineNext()
+{
+    $("#TimelineNext").click(function()
+        {
+            TimelineCal(2);
+        });
 }
 
 function TrackData(){
