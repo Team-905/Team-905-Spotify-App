@@ -546,7 +546,8 @@ function CommentHover(){
     $("#timelineEntrys").on('mouseover','.timelineEntry',function(){
             $("#comment").empty();
             $("#comment").append(
-                "<p>" +
+                
+				"<p>Comment:</p><p>" +
                 trackInfo[this.id][3] +
                 "</p>"
               );
