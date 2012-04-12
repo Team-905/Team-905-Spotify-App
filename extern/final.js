@@ -282,7 +282,7 @@ function TimelineCal(Par)
             {
                 var i = pageID;
 
-                console.log(i);
+               console.log("tester" + i);
 
                 return i;
             }
@@ -553,8 +553,6 @@ function CommentHover(){
               );
         });
 }
-
-
 
 
 
