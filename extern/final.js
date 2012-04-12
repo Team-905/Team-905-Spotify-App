@@ -402,7 +402,7 @@ function CurrentDate(){
 	
 	var CurrentDate = month + "/" + day + "/" + year;
 	
-	var DateCon = document.getElementById('TF_Date');
+	var DateCon = document.getElementById('datepicker');
 	DateCon.value = CurrentDate;
 	
 	
