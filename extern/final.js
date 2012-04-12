@@ -40,6 +40,7 @@ function Constructor_Preload(){
 	HelpMe();
     TimelineNext();
 	PlayerRefresh();
+	CloseHelpMe();
 	
 	console.log('Finished: Preloading');
 	
@@ -365,7 +366,7 @@ function DivEvent(){
 }
 
 function HelpMe(){
-
+	
 	$("#HelpMeButton").click(function()
         {
             console.log('Started: Help Me');
@@ -374,6 +375,19 @@ function HelpMe(){
             $("#timelineEntrys").hide();
             $("form").hide();
             $("#HelpMe").show();
+        });
+}
+
+function CloseHelpMe(){
+	
+	$("#CloseHelpMeButton").click(function()
+        {
+            console.log('Started: Help Me');
+            $("#canvas").hide();
+            $("#timeline").show();
+            $("#timelineEntrys").show();
+            $("form").hide();
+            $("#HelpMe").hide();
         });
 }
 
