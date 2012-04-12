@@ -218,17 +218,28 @@ function createTimeline()
     TrackData();
 }
     
-function createEntries()
+function createEntries(NorP)
 {
     var entrys = TracksAmount();
     var entryMax = 5;
     var timeline = document.getElementById("timeline");
     var ctx = timeline.getContext("2d");
-    var j = TimelineCal(0);
+    var j;
+
+    if( NorP == 3)
+    {
+        j = TimelineCal(3);
+        j -= (entryMax -1);
+    }
+    else
+    {
+        j = TimelineCal(0);
+    }
+
     //var k = TimelineCal(1);
     var i = 0;
     $("#timelineEntrys").empty();
-    console.log("Started: createEntries");
+    console.log("Started: createEntries " + j);
     while (i < entryMax)
     {
             
@@ -268,7 +279,13 @@ function TimelineCal(Par)
         {
             var pageID = $(".timelineEntry").first().attr('id');
             
-            createEntries();
+            console.log("pageID is " + pageID);
+
+
+
+            return pageID;
+
+            console.log("pageID na - is " + pageID);
         }
         else
         {
@@ -282,7 +299,7 @@ function TimelineCal(Par)
             {
                 var i = pageID;
 
-               console.log("tester" + i);
+                console.log(i);
 
                 return i;
             }
@@ -339,7 +356,7 @@ function TimelinePrev()
 {
     $("#TimelinePrev").click(function()
         {
-            TimelineCal(3);
+            createEntries(3);
         });
 }
 
@@ -553,6 +570,8 @@ function CommentHover(){
               );
         });
 }
+
+
 
 
 
