@@ -400,7 +400,7 @@ function CurrentDate(){
 		console.log("month");
 	}
 	
-	var CurrentDate = month + "/" + day + "/" + year;
+	var CurrentDate = day + "/" + month + "/" + year;
 	
 	var DateCon = document.getElementById('datepicker');
 	DateCon.value = CurrentDate;
@@ -410,6 +410,7 @@ function CurrentDate(){
 
 function DatePicker(){
     $( "#datepicker" ).datepicker({
+        dateFormat: "dd/mm/yy",
         altField: "#TF_Date",
         altFormat: "yy-mm-dd"
     });
