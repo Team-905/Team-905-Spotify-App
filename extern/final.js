@@ -38,7 +38,8 @@ function Constructor_Preload(){
     DivEvent();
 	DatePicker();
 	HelpMe();
-        TimelineNext()
+    TimelineNext();
+	PlayerRefresh();
 	
 	console.log('Finished: Preloading');
 	
