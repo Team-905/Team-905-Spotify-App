@@ -387,17 +387,21 @@ function CurrentDate(){
 	var month = currentTime.getMonth() + 1
 	var day = currentTime.getDate()
 	var year = currentTime.getFullYear()
-	var CurrentDate = month + "-" + day + "-" + year
 	
-	if(day.lenth = <2){
+	if(day < 10){
 		day = "0" + day;
+		console.log("dag");
 	}
 	
-	if(month.lenth = <2){
-		month = "0" + day;
+	if(month < 10){
+		month = "0" + month;
+		console.log("month");
 	}
+	
+	var CurrentDate = month + "/" + day + "/" + year;
 	
 	var DateCon = document.getElementById('TF_Date');
 	DateCon.value = CurrentDate;
+	
 	
 }
