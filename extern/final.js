@@ -50,11 +50,11 @@ function ShowTrackData(){
 	var playerTrackInfo = player.track;
 
     if (playerTrackInfo == null) {
-        $('h2').replaceWith("<span class='error'>Er speeld niets!</span>");
+        $('h2').replaceWith("Er speelt momenteel geen nummer.");
     } else {
-		var track = playerTrackInfo.data;
-		$('h2').replaceWith("<h2> Track: "+ track.name + "<BR /> Album: " + track.album.name + " <BR />Artiest: " + track.album.artist.name + ". <BR /> URI/Locatie: " + track.uri + "</h2>");
-	}
+	var track = playerTrackInfo.data;
+	$('h2').replaceWith("<h2> Track: "+ track.name + "<BR /> Album: " + track.album.name + " <BR />Artiest: " + track.album.artist.name + ". <BR /> URI/Locatie: " + track.uri + "</h2>");
+    }
 }
 
 function Squares(){
@@ -391,7 +391,15 @@ function CurrentDate(){
 	var year = currentTime.getFullYear()
 	var CurrentDate = month + "/" + day + "/" + year
 	
-	var DateCon = document.getElementById('datepicker');
+	if(day.lenth = <2){
+		day = "0" + day;
+	}
+	
+	if(month.lenth = <2){
+		month = "0" + day;
+	}
+	
+	var DateCon = document.getElementById('TF_Date');
 	DateCon.value = CurrentDate;
 	
 }
