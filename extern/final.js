@@ -399,7 +399,7 @@ function CurrentDate(){
 		month = "0" + day;
 	}
 	
-	var DateCon = document.getElementById('TF_Date');
+	var DateCon = document.getElementById('datepicker');
 	DateCon.value = CurrentDate;
 	
 }
