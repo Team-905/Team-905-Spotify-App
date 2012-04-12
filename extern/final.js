@@ -22,6 +22,7 @@ function Constructor(){
         PlayerRefresh();
         TimelineCal();
         TimelineNext();
+        DatePicker();
 
         console.log('Finished: loading app.');
 }
@@ -433,9 +434,29 @@ function CurrentDate(){
 	var month = currentTime.getMonth() + 1
 	var day = currentTime.getDate()
 	var year = currentTime.getFullYear()
-	var CurrentDate = month + "-" + day + "-" + year
+
+	if(day < 10){
+		day = "0" + day;
+		console.log("dag");
+	}
 	
-	var DateCon = document.getElementById('TF_Date');
+	if(month < 10){
+		month = "0" + month;
+		console.log("month");
+	}
+	
+	var CurrentDate = day + "/" + month + "/" + year;
+	
+	var DateCon = document.getElementById('datepicker');
 	DateCon.value = CurrentDate;
 	
+	
+}
+
+function DatePicker(){
+    $( "#datepicker" ).datepicker({
+        dateFormat: "dd/mm/yy",
+        altField: "#TF_Date",
+        altFormat: "yy-mm-dd"
+    });
 }
