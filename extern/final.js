@@ -40,6 +40,7 @@ function Constructor_Preload(){
 	HelpMe();
     TimelineNext();
 	PlayerRefresh();
+        CommentHover();
 	
 	console.log('Finished: Preloading');
 	
@@ -332,16 +333,17 @@ function TrackData(){
 
     $(xmlData).find("track").each(function(){
         var track_uri = $(this).find("track_uri").text();
+        var comment = $(this).find("comment").text();
 
         m.Track.fromURI("spotify:track:"+track_uri,function(track){
-            CheckData(track.name,track.album.artist.name,track.uri);
+            CheckData(track.name,track.album.artist.name,track.uri,comment);
         });
     })
 }
 
-function CheckData(track,artist,uri){
+function CheckData(track,artist,uri,comment){
 
-    var temp = [track,artist,uri];
+    var temp = [track,artist,uri,comment];
     trackInfo.push(temp);
 
     if (trackInfo.length == TracksAmount()){
@@ -506,6 +508,17 @@ function DatePicker(){
         altField: "#TF_Date",
         altFormat: "yy-mm-dd"
     });
+}
+
+function CommentHover(){
+    $("#timelineEntrys").on('mouseover','.timelineEntry',function(){
+            $("#comment").empty();
+            $("#comment").append(
+                "<p>" +
+                trackInfo[this.id][3] +
+                "</p>"
+              );
+        });
 }
 
 
