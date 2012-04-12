@@ -389,6 +389,14 @@ function CurrentDate(){
 	var year = currentTime.getFullYear()
 	var CurrentDate = month + "-" + day + "-" + year
 	
+	if(day.lenth = <2){
+		day = "0" + day;
+	}
+	
+	if(month.lenth = <2){
+		month = "0" + day;
+	}
+	
 	var DateCon = document.getElementById('TF_Date');
 	DateCon.value = CurrentDate;
 	
