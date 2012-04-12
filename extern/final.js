@@ -199,12 +199,12 @@ function createEntries()
     var entryMax = 5;
     var timeline = document.getElementById("timeline");
     var ctx = timeline.getContext("2d");
-    var i = TimelineCal(0);
-    var j = TimelineCal(1);
-    
-
+    var j = TimelineCal(0);
+    //var k = TimelineCal(1);
+    var i = 0;
+    $("#timelineEntrys").empty();
     console.log("Started: createEntries");
-    while (i < j)
+    while (i < entryMax)
     {
             
             var spacing = (800 / entryMax) * i;
@@ -219,10 +219,10 @@ function createEntries()
 
             $("#timelineEntrys").append
             (
-                '<div id="' + i + '"class="timelineEntry"><p>'
-                +  trackInfo[i][0] + 
+                '<div id="' + j + '"class="timelineEntry"><p>'
+                +  trackInfo[j][0] +
                 '</p><p>'
-                +  trackInfo[i][1] +
+                +  trackInfo[j][1] +
                 '</p></div>'
             );
 
@@ -230,6 +230,7 @@ function createEntries()
                                 .css('margin-right', Entryspacing);
             
             i++;
+            j++;
     }
 
 }
@@ -238,33 +239,57 @@ function TimelineCal(Par)
 {
         console.log("Started: TimelineCal");
         
-        var pageID = 1;
-        
-        if(Par == 0)
-        {
-            var i = pageID + 1;
-            
-            console.log(i);
-            
-            return i;
+        var pageID = $(".timelineEntry").last().attr('id');
+
+        console.log("pageID = " + pageID + ", Par = " + Par);
+
+        if (pageID !== undefined){
+            if(Par == 0)
+            {
+                var i = pageID;
+
+                console.log(i);
+
+                return i;
+            }
+
+            else if(Par == 1)
+            {
+                var j = pageID + 5;
+
+                console.log(j);
+
+                return j;
+            }
+
+            else if(Par == 2)
+            {
+               
+                createEntries();
+            }
         }
-        
-        else if(Par == 1)
+        else
         {
-            var j = pageID * 5;
-            
-            console.log(j);
-            
-            return j;
-        }
-        
-        else if(Par == 2)
-        {
-            pageID++;
-            
-            console.log(pageID);
-            
-            createEntries();
+           if(Par == 0)
+            {
+
+                return 0;
+            }
+
+            else if(Par == 1)
+            {
+
+                return 5;
+            }
+
+            else if(Par == 2)
+            {
+                pageID++;
+
+                console.log(pageID);
+
+                createEntries();
+            }
         }
 }
 
