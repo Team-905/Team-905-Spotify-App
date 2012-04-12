@@ -34,12 +34,14 @@ function Constructor_Preload(){
 	console.log('Con_Started: preloading stuff');
 	
 	SubButton();
-    Cancel();
-    DivEvent();
+        Cancel();
+        DivEvent();
 	DatePicker();
 	HelpMe();
-    TimelineNext();
+        TimelineNext();
+        TimelinePrev()
 	PlayerRefresh();
+	CloseHelpMe();
         CommentHover();
 	
 	console.log('Finished: Preloading');
@@ -262,8 +264,17 @@ function TimelineCal(Par)
 {
         console.log("Started: TimelineCal");
         
-        var pageID = $(".timelineEntry").last().attr('id');
-
+        if(Par == 3)
+        {
+            var pageID = $(".timelineEntry").first().attr('id');
+            
+            createEntries();
+        }
+        else
+        {
+            var pageID = $(".timelineEntry").last().attr('id');
+        }
+        
         console.log("pageID = " + pageID + ", Par = " + Par);
 
         if (pageID !== undefined){
@@ -324,6 +335,14 @@ function TimelineNext()
         });
 }
 
+function TimelinePrev()
+{
+    $("#TimelinePrev").click(function()
+        {
+            TimelineCal(3);
+        });
+}
+
 function TrackData(){
 
     if (trackInfo.length>0){
@@ -367,7 +386,7 @@ function DivEvent(){
 }
 
 function HelpMe(){
-
+	
 	$("#HelpMeButton").click(function()
         {
             console.log('Started: Help Me');
@@ -376,6 +395,19 @@ function HelpMe(){
             $("#timelineEntrys").hide();
             $("form").hide();
             $("#HelpMe").show();
+        });
+}
+
+function CloseHelpMe(){
+	
+	$("#CloseHelpMeButton").click(function()
+        {
+            console.log('Started: Help Me');
+            $("#canvas").hide();
+            $("#timeline").show();
+            $("#timelineEntrys").show();
+            $("form").hide();
+            $("#HelpMe").hide();
         });
 }
 
