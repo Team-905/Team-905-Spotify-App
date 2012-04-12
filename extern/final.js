@@ -8,6 +8,10 @@ var trackInfo = []; //Global var to keep track info until it's displayed
 
 $(document).ready(Constructor);
 
+//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// start constructors ///////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
 function Constructor(){
 
         console.log('Con_Started: loading app.');
@@ -16,16 +20,41 @@ function Constructor(){
         createTimeline();
         AddToTimeline();
         PlayTimeline();
-        SubButton();
-        Cancel();
-        DivEvent();
-        PlayerRefresh();
-        TimelineCal();
-        TimelineNext();
-        DatePicker();
+
+
+
+        		
+		Constructor_Preload();
 
         console.log('Finished: loading app.');
 }
+
+function Constructor_Preload(){
+	
+	console.log('Con_Started: preloading stuff');
+	
+	SubButton();
+    Cancel();
+    DivEvent();
+	DatePicker();
+	HelpMe();
+	
+	console.log('Finished: Preloading');
+	
+}
+
+function Constructor_Playlist(){
+	
+	console.log('Con_Started: playlist constructor.');
+	RemoveTracks();
+	AddTracks();
+	
+	console.log('Finished: playlist constructor.');
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// end constructors /////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
 
 function CreatePlaylist(){
 	var playlist = new m.Playlist.fromURI('http://open.spotify.com/user/1117535795/playlist/59nkn5pKC1SMtRr5mG2JPm');
@@ -98,15 +127,6 @@ function Get_User_ID(){
 	console.log('Started: Get_User_ID');
 	var ID = models.session.anonymousUserID;
         return ID;
-}
-
-function Constructor_Playlist(){
-	
-	console.log('Con_Started: playlist constructor.');
-	RemoveTracks();
-	AddTracks();
-	
-	console.log('Finished: playlist constructor.');
 }
 
 function GetPlaylist(){
@@ -344,15 +364,17 @@ function DivEvent(){
 
 function HelpMe(){
 
-    console.log("Started: HelpMe");
+	$("#HelpMeButton").click(function()
+        {
+		console.log("Started: HelpMe");
 
-    var item = document.getElementById("foo");
-    if(item.style.visibility == 'visible') {
-        item.style.visibility = 'hidden';
-    } else {
-        item.style.visibility = 'visible';
-    }
-
+		var item = document.getElementById("HelpMe");
+		if(item.style.visibility == 'visible') {
+			item.style.visibility = 'hidden';
+		} else {
+			item.style.visibility = 'visible';
+		}
+      });
 }
 
 function PlayPlaylist(){
@@ -485,3 +507,25 @@ function DatePicker(){
         altFormat: "yy-mm-dd"
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
