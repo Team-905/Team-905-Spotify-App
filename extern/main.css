@@ -71,6 +71,15 @@ p{
 }
 
 canvas{
+        position: fixed;
         margin: 0 10px;
+        bottom: 0px;
+        left:0px;
+}
+
+#timelineEntrys{
+    position : fixed;
+    bottom: 100px;
+    left:0px;
 }
 
