@@ -13,25 +13,27 @@
     <body>
         <h1>U Liked Then Spotify App</h1>
         <h2></h2>
-        <div class="button mainButton" id="HelpMeButton">
-            <p>
-                ? Help me ?
-            </p>
-        </div>
-        <div class="button mainButton" id="AddToTimeline">
-            <p>
-                + Add To Timeline
-            </p>
-        </div>
-        <div class="button mainButton" id="PlayTimeline">
-            <p>
-                &gt; Play Timeline
-            </p>
-        </div>
-        <div class="button mainButton" id="TimelineNext">
-            <p>
-                Next
-            </p>
+        <div id="Buttons">
+            <div class="button mainButton" id="HelpMeButton">
+                <p>
+                    ? Help me
+                </p>
+            </div>
+            <div class="button mainButton" id="AddToTimeline">
+                <p>
+                    + Add To Timeline
+                </p>
+            </div>
+            <div class="button mainButton" id="PlayTimeline">
+                <p>
+                    &gt; Play Timeline
+                </p>
+            </div>
+            <div class="button mainButton" id="TimelineNext">
+                <p>
+                    Next
+                </p>
+            </div>
         </div>
                 
         <canvas id="canvas" width="900" height="300"></canvas><br>
@@ -60,33 +62,27 @@
 			
         </form>
         
-		<div id='HelpMe' style='visibility: hidden;'>
+		<div class="hide" id='HelpMe'>
 				
-				Ultify<BR />
-				Welcome to the Team_905 spotify app.<BR />
-				<BR />
-				How do I use the app?<BR />
-				<BR />
-				Add new song:<BR />
-				1) Find and play your number.<BR />
-				2) Go back to the app.<BR />
-				3) Press add to timeline.<BR />
-				4) Keep the date as current date, or change it with same format.<BR />
-				5) Fill in a comment and push "submit"<BR />
-				Done!<BR />
-				<BR />
-				Play timeline:<BR />
-				1) Press the button play timeline.<BR />
-				Done!<BR />
-				<BR />
-				Remove track:<BR />
-				Cant be done, yet!<BR />
-				<BR />
-				Errors?<BR />
-				Close or reload app/Spotify<BR />
-				<BR />
-
-			</div>
+                    <h3>Ultify</h3>
+				
+                    <p>Welcome to the Team_905 spotify app.</p>
+		
+                    <h3>How do I use the app?</h3>
+		
+                    <p>Add new song:</p>
+                    <p>1) Find and play your number.</p>
+                    <p>2) Go back to the app.</p>
+                    <p>3) Press add to timeline.</p>
+                    <p>4) Keep the date as current date, or change it with same format.</p>
+                    <p>5) Fill in a comment and push "submit"</p>
+                    <p>Done!</p>
+				
+                    <h3>Play timeline:</h3>
+                    
+                    <p>1) Press the button play timeline.</p>
+                    <p>Done!</p>
+		</div>
 		
         <div id="timelineEntrys"></div>
         

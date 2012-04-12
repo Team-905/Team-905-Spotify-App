@@ -367,15 +367,13 @@ function HelpMe(){
 
 	$("#HelpMeButton").click(function()
         {
-		console.log("Started: HelpMe");
-
-		var item = document.getElementById("HelpMe");
-		if(item.style.visibility == 'visible') {
-			item.style.visibility = 'hidden';
-		} else {
-			item.style.visibility = 'visible';
-		}
-      });
+            console.log('Started: Help Me');
+            $("#canvas").hide();
+            $("#timeline").hide();
+            $("#timelineEntrys").hide();
+            $("form").hide();
+            $("#HelpMe").show();
+        });
 }
 
 function PlayPlaylist(){
