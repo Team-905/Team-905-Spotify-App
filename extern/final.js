@@ -34,11 +34,12 @@ function Constructor_Preload(){
 	console.log('Con_Started: preloading stuff');
 	
 	SubButton();
-    Cancel();
-    DivEvent();
+        Cancel();
+        DivEvent();
 	DatePicker();
 	HelpMe();
-    TimelineNext();
+        TimelineNext();
+        TimelinePrev()
 	PlayerRefresh();
 	
 	console.log('Finished: Preloading');
@@ -261,8 +262,17 @@ function TimelineCal(Par)
 {
         console.log("Started: TimelineCal");
         
-        var pageID = $(".timelineEntry").last().attr('id');
-
+        if(Par == 3)
+        {
+            var pageID = $(".timelineEntry").first().attr('id');
+            
+            createEntries();
+        }
+        else
+        {
+            var pageID = $(".timelineEntry").last().attr('id');
+        }
+        
         console.log("pageID = " + pageID + ", Par = " + Par);
 
         if (pageID !== undefined){
@@ -320,6 +330,14 @@ function TimelineNext()
     $("#TimelineNext").click(function()
         {
             TimelineCal(2);
+        });
+}
+
+function TimelinePrev()
+{
+    $("#TimelinePrev").click(function()
+        {
+            TimelineCal(3);
         });
 }
 
