@@ -30,9 +30,9 @@ if (isset($_GET['u']))
             $ptrack_uri = $_POST['track'];
             $tcomment = $_POST['comment'];
             $pcomment = InputSecurity($tcomment);
-            if (isset($_POST['time']))
+            if (isset($_POST['TF_Date']))
             {
-                $ptime = $_POST['time'];
+                $ptime = $_POST['TF_Date'];
 
                 $qinserttrack = "INSERT into ultify(user_id,track_uri,comment,time) 
                                     VALUES('".$user_id."','".$ptrack_uri."','".$pcomment."','".$ptime."')";
